@@ -2,16 +2,16 @@
 
 if (isset($_POST['submit'])) {
     $suhu_celcius = $_POST['suhu_celcius'];
-    $suhu_fanherit;
+    $suhu_fahrenheit;
 
-    $suhu_fanherit = $suhu_celcius / 33.8;
+    $suhu_fahrenheit = $suhu_celcius / 33.8;
 
     if ($suhu_celcius > 30) {
         echo "Panas";
     } elseif ($suhu_celcius > 25) {
-        echo "Dingin";
+        echo "Normal";
     } else {
-        echo "normal";
+        echo "dingin";
     }
 }
 
@@ -41,4 +41,4 @@ if (isset($_POST['submit'])) {
 
 </body>
 
-</html>
+</html> 
