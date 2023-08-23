@@ -9,9 +9,9 @@ $name = "";
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $gaji_pokok = $_POST['gaji_pokok'];
-    $gaji_bersih = $gaji_pokok - ($gaji_pokok * 0.1);
-    $pjk = $gaji_bersih - ($gaji_bersih * 0.1);
-    $tunj = $pjk - ($pjk * 0.1);
+    $tunj = (20 * $gaji_pokok)/ 100;    
+    $pjk = 15 * ($gaji_pokok + $tunj) / 100;
+    $gaji_bersih = $gaji_pokok + $tunj - $pjk;
 }
 
 ?>
@@ -33,9 +33,9 @@ if (isset($_POST['submit'])) {
     <?php if (isset($_POST['submit'])) : ?>
         <p>Nama: <?php echo $name; ?></p>
         <p>Gaji Pokok: <?php echo $gaji_pokok; ?></p>
-        <p>Gaji Bersih: <?php echo $gaji_bersih; ?></p>
-        <p>Pendapatan Jabatan: <?php echo $pjk; ?></p>
+        <p>Pajak: <?php echo $pjk; ?></p>
         <p>Tunjangan: <?php echo $tunj; ?></p>
+        <p>Gaji Bersih: <?php echo $gaji_bersih; ?></p>
     <?php endif; ?>
 </body>
 </html>

@@ -1,10 +1,11 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    $suhu_celcius = $_POST['suhu_celcius'];
-    $suhu_fahrenheit;
+    $suhu_fahrenheit = $_POST['suhu_fahrenheit'];
+    $suhu_celcius = ($suhu_fahrenheit- 32 ) * 5/9  ;
 
-    $suhu_fahrenheit = $suhu_celcius / 33.8;
+    echo "Suhu fahrenheit hari ini adalah " . $suhu_fahrenheit . "F  <br> " ;
+    echo "suhu celcius " . $suhu_celcius  ." C" ;
 
     if ($suhu_celcius > 30) {
         echo "Panas";
@@ -30,7 +31,7 @@ if (isset($_POST['submit'])) {
         <table>
             <tr>
                 <td>suhu (fahrenheit) </td>
-                <td><input type="text" name="suhu_celcius" id="suhu"></td>
+                <td><input type="text" name="suhu_fahrenheit" id="suhu"></td>
             </tr>
             <tr>
                 <td><input type="submit" value="Submit" name="submit">

@@ -6,6 +6,54 @@
     <title>Kode Pegawai</title>
 </head>
 <body>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        tr {
+            margin-bottom: 10px;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+    </style>
+
     <form method="POST" action="">
         <tr>
             <td>No Pegawai</td>
@@ -22,7 +70,7 @@
         $tanggal = substr($kodepegawai, 1, 2);
         $bulan = substr($kodepegawai, 3, 2);
         $tahun = substr($kodepegawai, 5, 4);
-        $urutan = substr($kodepegawai, 12, 1);
+        $urutan = substr($kodepegawai, 9, 2);
 
         if ($kodepegawai < 11) {
             echo "nomor pegawai tidak sesuai";
